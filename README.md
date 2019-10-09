@@ -10,3 +10,7 @@ Steps to Setup:
 
     2--> Run npm install
 
+    3--> Package the smart contract via IBP.
+
+    4--> Install and instantiate the contract via IBP.
+
