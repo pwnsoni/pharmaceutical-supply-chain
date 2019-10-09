@@ -1,6 +1,6 @@
-PREREQUISITES--->
-
-    1--> Setup hypeledger fabric in your system locally (Using docker, images can be found easily).
+Prequisites:
+    
+    1--> Setup hypeledger fabric in your system locally (Using docker, fabric images can be found easily).
     2--> Use VS code.
     3--> Use IBM blockchain platform extension.
 
