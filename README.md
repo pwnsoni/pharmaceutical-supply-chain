@@ -1,5 +1,7 @@
 Prerequisites:
+    
     1--> Use Visual Studio code.
+
     2--> Use IBM blockchain platform extension.
 
 Steps to Setup:
@@ -18,5 +20,14 @@ Steps to Setup:
 
     6--> Run node initTransaction.js in /pharma-chain directory to test the network if it is running.
 
-    7--> Run npm run dev in pharma-chain directory to run the web app
+    7--> Run npm run dev in pharma-chain directory to run the web app.
 
+Platforms Used:
+
+    1--> Hyperledger fabric 1.4
+
+    2--> npm 6.4.1
+
+    3--> node 8.16.1
+
+    4--> nuxt is used to create the web app.
