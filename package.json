@@ -1,0 +1,26 @@
+{
+  "name": "finalyear",
+  "version": "1.0.0",
+  "description": "sample project to test communication between web and blockchain",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwnsoni/samplechaincode.git"
+  },
+  "author": "Pawan Soni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pwnsoni/samplechaincode/issues"
+  },
+  "homepage": "https://github.com/pwnsoni/samplechaincode#readme",
+  "dependencies": {
+    "fabric-network": "^1.4.5",
+    "tslint": "^6.0.0"
+  }
+}
