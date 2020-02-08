@@ -4,6 +4,15 @@ Prerequisites:
 
     2--> Use IBM blockchain platform extension.
 
+    3--> Hyperledger fabric 1.4
+
+    4--> npm 6.4.1
+
+    5--> node 8.16.1
+
+    6--> nuxt is used to create the web app.
+
+
 Steps to Setup:
 
     1--> Clone this repository
@@ -22,12 +31,3 @@ Steps to Setup:
 
     7--> Run npm run dev in pharma-chain directory to run the web app.
 
-Platforms Used:
-
-    1--> Hyperledger fabric 1.4
-
-    2--> npm 6.4.1
-
-    3--> node 8.16.1
-
-    4--> nuxt is used to create the web app.
