@@ -3,6 +3,11 @@ node_modules/
 package-lock.json
 
 
+#authentication information (need to done in your system (extraction of wallett))
+
+server/wallet
+
+
 
 
 

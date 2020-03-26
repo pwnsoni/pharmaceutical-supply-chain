@@ -27,6 +27,12 @@ async function main() {
   // A gateway defines the peers used to access Fabric networks
   const gateway = new Gateway();
 
+  let queryString = {
+    "selector": {}
+  }
+
+  console.log(JSON.stringify(queryString));
+
   // Main try/catch block
   try {
 
@@ -79,10 +85,36 @@ async function main() {
       args.licenseNo, args.organisationName, args.address);
     
     console.log(response2);
+    
+    let args2 = {
+      function: 'addMedicine',
+      batchId: 'batch1t',
+      medicineName: 'Norflox-tz',
+      manufacturerLicenseNo: 'rx1234',
+      organisationName: 'Rx',
+      address: 'Sector 62',
+      formula: 'paracetamol',
+      contract: contract,
+      owner: 'rx123'
+
+    };
+
+
+    let response3 = await args2.contract.submitTransaction(args2.function, args2.batchId, 
+      args2.medicineName, args2.formula, args2.manufacturerLicenseNo, 
+      args2.organisationName, args2.address);
+    
+    console.log(response3);
 
     response2 = await contract.submitTransaction('queryAll');
 
     console.log(response2);
+
+
+    response2 = await contract.submitTransaction('queryWithQueryString', '{"selector":{"participantType":"Manufacturer"}}')
+
+    console.log((response2.toString()));
+
 
   } catch (error) {
     console.log(`Error processing transaction. ${error}`);
