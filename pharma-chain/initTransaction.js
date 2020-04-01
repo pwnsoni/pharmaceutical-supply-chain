@@ -102,7 +102,7 @@ async function main() {
 
     let response3 = await args2.contract.submitTransaction(args2.function, args2.batchId, 
       args2.medicineName, args2.formula, args2.manufacturerLicenseNo, 
-      args2.organisationName, args2.address);
+      args2.organisationName, args2.owner, args2.address);
     
     console.log(response3);
 
