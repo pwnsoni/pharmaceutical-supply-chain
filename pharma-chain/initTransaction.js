@@ -110,7 +110,7 @@ async function main() {
 
     console.log(response2);
 
-
+//Transaction to retrieve data from chain with some selectors
     response2 = await contract.submitTransaction('queryWithQueryString', '{"selector":{"participantType":"Manufacturer"}}')
 
     console.log((response2.toString()));

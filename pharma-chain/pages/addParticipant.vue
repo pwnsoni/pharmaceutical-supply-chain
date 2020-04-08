@@ -85,7 +85,8 @@
       async onSubmit(evt) {
         evt.preventDefault()
         if (confirm(JSON.stringify(this.form))){
-          await this.$axios.$post('/api/addParticipant', this.form)
+          let x = await this.$axios.$post('/api/addParticipant', this.form)
+          alert(JSON.stringify(x))
           this.$router.push('/')
         }  
       },
