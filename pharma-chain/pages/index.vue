@@ -6,7 +6,7 @@
         Pharma-Chain
       </h1>
       <h2 class="subtitle">
-        web-app to interact with supply chain for pharmaceuticals using blockchain (under devlopment)
+        Web-App to interact with supply chain for pharmaceuticals using blockchain (under devlopment)
       </h2>
       <div class="links">
         <a
@@ -22,6 +22,16 @@
           class="button--grey"
         >
           Retrieve All Records
+        </a>
+       <br>
+
+        <br>
+         <a
+          href="/addParticipant"
+          target="_blank"
+          class="button--green"
+        >
+          Add Medicine
         </a>
       </div>
     </div>
