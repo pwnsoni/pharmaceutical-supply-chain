@@ -64,6 +64,43 @@ app.use(bodyParser.json())
 //************************************************ */
 
 
+
+//query with query string
+
+app.post('/api/search', async (req, res) => {
+  // json from front end 
+  let selector = {};
+
+  for (let key in req.body) {
+    console.log(req.body[key])
+    if (!(req.body[key] == null || req.body[key] == '')){
+      selector[key] = req.body[key];
+    }
+  }
+
+  //{"participantType":"Manufacturer"}
+
+  let networkObject = await blockchainClient.connectToNetwork();
+
+  console.log(selector)
+  let args = {
+    'selector' : selector
+  };
+
+
+  console.log(JSON.stringify(args))
+
+  let response = await blockchainClient.queryWithQueryString(networkObject.contract, args);
+
+  console.log('response')
+  console.log(response.toString())
+  //send it to blockchain to add participant
+  res.send(response.toString())
+})
+
+///////////////////////////////////////////////////
+
+
   // this is for checking connection to invoke init transaction//
   app.get('/initTransaction', async (req, res) => {
     let networkObject = await blockchainClient.connectToNetwork();

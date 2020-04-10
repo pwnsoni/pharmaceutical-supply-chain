@@ -101,6 +101,13 @@ BlockchainClient = {
       response = JSON.parse(response.toString());
       return response;
 
+    },
+
+    async queryWithQueryString(contract, queryString){
+      console.log("...................")
+      console.log(JSON.stringify(queryString))
+      let response = await contract.submitTransaction('queryWithQueryString', JSON.stringify(queryString));
+      return response;
     }
 }
 

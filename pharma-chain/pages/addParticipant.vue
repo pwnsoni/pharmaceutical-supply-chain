@@ -58,6 +58,11 @@
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
     </b-form>
+
+    <div v-if="spin">
+  <b-spinner label="Loading..."></b-spinner>
+</div>
+
     </div>
     <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
@@ -77,13 +82,16 @@
           // checked: []
         },
         participantType: [{ text: 'Select One', value: null }, 'Manufacturer', 'Distributor', 'Wholeseller', 'Retailer'],
-        show: true
+        show: true,
+        spin: false
       }
     },
     methods: {
       
       async onSubmit(evt) {
         evt.preventDefault()
+        this.spin = true
+        this.show = false
         if (confirm(JSON.stringify(this.form))){
           let x = await this.$axios.$post('/api/addParticipant', this.form)
           alert(JSON.stringify(x))

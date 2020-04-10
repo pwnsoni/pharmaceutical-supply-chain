@@ -23,6 +23,15 @@
         >
           Retrieve All Records
         </a>
+
+        <a
+          href="/search"
+          target="_blank"
+          class="button--grey"
+        >
+          Search Records
+        </a>
+
        <br>
 
         <br>
