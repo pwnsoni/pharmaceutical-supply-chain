@@ -68,11 +68,14 @@
 </div> -->
 
     </div>
-    <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
+    <b-card class="mt-3" header="Search Result" v-if="spin" >
+      <pre class="m-0">{{ x }}</pre>
     </b-card>
 <div>
     <div>
+        <b-card class="mt-3" header="Form Data Query">
+      <pre class="m-0">{{ form }}</pre>
+    </b-card>
     </div>
 </div>
 
@@ -92,6 +95,7 @@
           // checked: []
         },
         participantType: [{ text: 'Select One', value: null }, 'Manufacturer', 'Distributor', 'Wholeseller', 'Retailer'],
+        x: {},
         show: true,
         spin: false
       }
@@ -108,8 +112,8 @@
             // pass this object and that component can show it on 
             // browser and the component can be used later for other purposes as well.
 
-          let x = await this.$axios.$post('/api/search', this.form)
-          alert(x)
+          this.x = await this.$axios.$post('/api/search', this.form)
+          
         //   this.$router.push('/')
         }  
       },

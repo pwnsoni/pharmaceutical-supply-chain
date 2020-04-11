@@ -34,7 +34,6 @@ app.use(bodyParser.json())
   app.get('/api/query', async (req, res) => {
     let networkObject = await blockchainClient.connectToNetwork();
     let response = await blockchainClient.queryAll(networkObject.contract);
-    console.log(response.toString());
     response = response.toString();
     res.send(JSON.parse(response))
   })
@@ -45,7 +44,6 @@ app.use(bodyParser.json())
     const participant = req.body;
     let networkObject = await blockchainClient.connectToNetwork();
 
-    console.log(participant)
     let args = {
       function: 'addParticipant',
       participantType: participant.participantType,
@@ -57,9 +55,8 @@ app.use(bodyParser.json())
 
     let response = await blockchainClient.addParticipant(args);
 
-    console.log(response)
     //send it to blockchain to add participant
-    res.send(participant)
+    res.send(response)
   })
 //************************************************ */
 
@@ -72,28 +69,20 @@ app.post('/api/search', async (req, res) => {
   let selector = {};
 
   for (let key in req.body) {
-    console.log(req.body[key])
     if (!(req.body[key] == null || req.body[key] == '')){
       selector[key] = req.body[key];
     }
   }
 
-  //{"participantType":"Manufacturer"}
 
   let networkObject = await blockchainClient.connectToNetwork();
 
-  console.log(selector)
   let args = {
     'selector' : selector
   };
 
-
-  console.log(JSON.stringify(args))
-
   let response = await blockchainClient.queryWithQueryString(networkObject.contract, args);
 
-  console.log('response')
-  console.log(response.toString())
   //send it to blockchain to add participant
   res.send(response.toString())
 })

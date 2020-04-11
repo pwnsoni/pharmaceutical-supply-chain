@@ -80,7 +80,6 @@ BlockchainClient = {
     
     async queryAll(contract) {
       let response = await contract.evaluateTransaction('queryAll');
-      console.log(response.toString())
       return response;
     },
 
@@ -104,8 +103,6 @@ BlockchainClient = {
     },
 
     async queryWithQueryString(contract, queryString){
-      console.log("...................")
-      console.log(JSON.stringify(queryString))
       let response = await contract.submitTransaction('queryWithQueryString', JSON.stringify(queryString));
       return response;
     }
