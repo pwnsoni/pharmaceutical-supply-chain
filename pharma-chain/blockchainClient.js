@@ -64,6 +64,7 @@ BlockchainClient = {
     async addParticipant(args) {
       //call addMember smart contract function
       //$TODO: dynamically call submitTransaction
+      console.log("initiating addParticipant transaction");
       let response = await args.contract.submitTransaction(args.function, args.participantType, 
         args.licenseNo, args.organisationName, args.address);
       return response;
@@ -79,6 +80,8 @@ BlockchainClient = {
 
     
     async queryAll(contract) {
+
+      console.log("initiating queryAll transaction");
       let response = await contract.evaluateTransaction('queryAll');
       return response;
     },
@@ -103,6 +106,8 @@ BlockchainClient = {
     },
 
     async queryWithQueryString(contract, queryString){
+      
+      console.log("initiating queryWithQueryString transaction");
       let response = await contract.submitTransaction('queryWithQueryString', JSON.stringify(queryString));
       return response;
     }
