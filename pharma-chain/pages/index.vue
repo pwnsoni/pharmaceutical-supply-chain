@@ -29,14 +29,14 @@
           target="_blank"
           class="button--grey"
         >
-          Search Record
+          Search Records
         </a>
 
        <br>
 
         <br>
          <a
-          href="/addParticipant"
+          href="/addmedicine"
           target="_blank"
           class="button--green"
         >
