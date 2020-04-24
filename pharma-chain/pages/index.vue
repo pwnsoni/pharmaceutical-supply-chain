@@ -29,7 +29,7 @@
           target="_blank"
           class="button--grey"
         >
-          Search Records
+          Search Record
         </a>
 
        <br>
