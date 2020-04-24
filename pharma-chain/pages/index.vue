@@ -36,7 +36,7 @@
 
         <br>
          <a
-          href="/addParticipant"
+          href="/addmedicine"
           target="_blank"
           class="button--green"
         >
