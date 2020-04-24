@@ -49,8 +49,42 @@
           placeholder="Enter Address"
         ></b-form-input>
       </b-form-group>
+      <b-form-group id="input-group-5" label="Mfgdate :" label-for="input-5">
+            <b-form-input
+              id="input-5"
+              v-model="form.Mfgdate"
+              required
+              placeholder="Enter Address"
+            ></b-form-input>
+          </b-form-group>
+        <b-form-group id="input-group-6" label="Expdate :" label-for="input-6">
+            <b-form-input
+              id="input-6"
+              v-model="form.Expdate"
+              required
+              placeholder="Enter Expiry date"
+            ></b-form-input>
+          </b-form-group>
+       <b-form-group id="input-group-8" label="Batch num :" label-for="input-8">
+            <b-form-input
+              id="input-7"
+              v-model="form.Batchnum"
+              required
+              placeholder="Batch  num"
+            ></b-form-input>
+          </b-form-group>
 
-      
+          
+    <b-form-group id="input-group-7" label="Universal serial num :" label-for="input-7">
+            <b-form-input
+              id="input-7"
+              v-model="form.serialnum"
+              required
+              placeholder="Universal serial num"
+            ></b-form-input>
+          </b-form-group>
+
+          
 
       <!-- <b-form-group id="input-group-4">
         <b-form-checkbox-group v-model="form.checked" id="checkboxes-4">
@@ -77,7 +111,11 @@
           participantType: 'Manufacturer',
           organization: '',
           licenseNo: '',
-          address: ''
+          address: '',
+          Mfgdate:'',
+          Expdate:'',
+          Batchnum:'',
+          serialnum:'',
           // checked: []
         },
         // participantType: [{ text: 'Select One', value: null }, 'Manufacturer', 'Distributor', 'Wholeseller', 'Retailer'],
@@ -100,7 +138,11 @@
           this.form.participantType = null,
           this.form.organization = '',
           this.form.licenseNo = '',
-          this.form.address = ''
+          this.form.address = '',
+          this.form.Mfgdate='',
+          this.form.Expdate='',
+          this.form.Batchnum='',
+          this.form.serialnum='',
           // this.form.checked = []
         // Trick to reset/clear native browser form validation state
           this.show = false
