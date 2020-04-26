@@ -96,7 +96,7 @@ app.get('/api/trace/:key', async (req, res) => {
   let response = await blockchainClient.getHistoryByBatchId(networkObject.contract, key);
   // response = response.toString();
   // console.log("server");
-  console.log(response);
+  // console.log(response);
   res.send(response);
 })
 
