@@ -34,11 +34,19 @@
         </a>
 
         <a
-          href="/search"
+          href="/searchParticipants"
           target="_blank"
           class="button--grey"
         >
-          Search Records
+          Search Participants
+        </a>
+
+        <a
+          href="/searchMedicines"
+          target="_blank"
+          class="button--grey"
+        >
+          Search Medicines
         </a>
 
        <br>

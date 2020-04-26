@@ -72,6 +72,9 @@
             // browser and the component can be used later for other purposes as well.
 
           this.x = await this.$axios.$get('/api/trace/' + this.form.batchId);
+          if (this.x.length == 0){
+              alert("no records found of this particular batch")
+          }
           this.spin = false;
           
         //   this.$router.push('/')
@@ -84,7 +87,7 @@
           this.form.batchId = '',
           // this.form.checked = []
         // Trick to reset/clear native browser form validation state
-          this.show = false
+          this.x = {}
         //   this.$nextTick(() => {
         //   this.show = true
         // })
