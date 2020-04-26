@@ -105,6 +105,18 @@ BlockchainClient = {
 
     },
 
+    async getHistoryByBatchId(contract, keyPassed) {
+
+      let response = await contract.submitTransaction('retrieveHistoryForBatchId', keyPassed);
+      response = JSON.parse(response.toString())
+      console.log(response);
+      // console.log(",msa.sasa")
+      // console.log(response.toString());
+      // console.log('llll');
+      // console.log(JSON.parse(response.toString()))
+      return response;
+    },
+
     async queryWithQueryString(contract, queryString){
       
       console.log("initiating queryWithQueryString transaction");
