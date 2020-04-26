@@ -5,7 +5,7 @@
         Enter BatchId to trace the Provenance of the drug
       </h2>
 
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show" >
+    <b-form @submit="onSubmit" @reset="onReset">
 
       <b-form-group
         id="input-group-1"

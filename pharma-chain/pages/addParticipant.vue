@@ -55,8 +55,8 @@
         </b-form-checkbox-group>
       </b-form-group> -->
 
-      <b-button type="submit" variant="primary" v-if="show">Submit</b-button>
-      <b-button type="reset" variant="danger" v-if="show">Reset</b-button>
+      <b-button type="submit" variant="primary" v-if="!spin">Submit</b-button>
+      <b-button type="reset" variant="danger" v-if="!spin">Reset</b-button>
     </b-form>
 
     <div v-if="spin">
