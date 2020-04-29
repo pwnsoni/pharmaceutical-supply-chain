@@ -16,15 +16,17 @@
         >
           Trace Using BatchId 
         </a>
-        <br>
-        <br>
         <a
-          href="/addParticipant"
+          href="/ownershipTransfer"
           target="_blank"
           class="button--green"
         >
-          Add Participant
+          Ownership Transfer
         </a>
+        
+        <br>
+        <br>
+        
         <a
           href="/api/query"
           target="_blank"
@@ -49,9 +51,24 @@
           Search Medicines
         </a>
 
+        <a
+          href="/queryByKey"
+          target="_blank"
+          class="button--grey"
+        >
+          Retrieve by key
+        </a>
+
        <br>
 
         <br>
+        <a
+          href="/addParticipant"
+          target="_blank"
+          class="button--green"
+        >
+          Add Participant
+        </a>
          <a
           href="/addmedicine"
           target="_blank"
