@@ -1,14 +1,18 @@
 <template>
   <div style="padding : 20px">
     <div> 
-    <b-form @submit="onSubmit" @reset="onReset"  >
+      <h2 class="subtitle">
+        Search participants based on below keys
+      </h2>
+
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show" >
       
       <b-form-group id="input-group-3" label="Participant Type:" label-for="input-3">
         <b-form-select
           id="input-3"
           v-model="form.participantType"
           :options="participantType"
-          required
+          
         ></b-form-select>
       </b-form-group>
 
@@ -20,9 +24,9 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.organization"
+          v-model="form.name"
           type="text"
-          required
+          
           placeholder="Enter Organization Name "
         ></b-form-input>
       </b-form-group>
@@ -31,7 +35,7 @@
         <b-form-input
           id="input-2"
           v-model="form.licenseNo"
-          required
+          
           placeholder="Enter licenseNo number"
         ></b-form-input>
       </b-form-group>
@@ -41,7 +45,7 @@
         <b-form-input
           id="input-4"
           v-model="form.address"
-          required
+          
           placeholder="Enter Address"
         ></b-form-input>
       </b-form-group>
@@ -64,10 +68,19 @@
 </div>
 
     </div>
-    <b-card class="mt-3" header="Form Data Result">
+    <b-card class="mt-3" header="Search Result"  >
+      <pre class="m-0">{{ x }}</pre>
+    </b-card>
+<div>
+    <div>
+        <b-card class="mt-3" header="Form Data Query">
       <pre class="m-0">{{ form }}</pre>
     </b-card>
+    </div>
+</div>
+
   </div>
+        
 </template>
 
 <script>
@@ -76,12 +89,13 @@
       return {
         form: {
           participantType: null,
-          organization: '',
           licenseNo: '',
-          address: ''
+          address: '',
+          name: ''
           // checked: []
         },
         participantType: [{ text: 'Select One', value: null }, 'Manufacturer', 'Distributor', 'Wholeseller', 'Retailer'],
+        x: {},
         show: true,
         spin: false
       }
@@ -91,11 +105,17 @@
       async onSubmit(evt) {
         evt.preventDefault()
         this.spin = true
-        this.show = false
         if (confirm(JSON.stringify(this.form))){
-          let x = await this.$axios.$post('/api/addParticipant', this.form)
-          alert(JSON.stringify(x))
-          this.$router.push('/')
+           
+           // this x contains the query result but to show it on browser use something good such as a 
+            // component where ypu can 
+            // pass this object and that component can show it on 
+            // browser and the component can be used later for other purposes as well.
+
+          this.x = await this.$axios.$post('/api/search', this.form)
+          this.spin = false
+          
+        //   this.$router.push('/')
         }  
       },
 
@@ -105,10 +125,11 @@
           this.form.participantType = null,
           this.form.organization = '',
           this.form.licenseNo = '',
-          this.form.address = ''
+          this.form.address = '',
+          this.x = {}
           // this.form.checked = []
         // Trick to reset/clear native browser form validation state
-          this.show = false
+          
         //   this.$nextTick(() => {
         //   this.show = true
         // })

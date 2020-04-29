@@ -38,6 +38,18 @@ app.use(bodyParser.json())
     res.send(JSON.parse(response))
   })
 
+  //query By Key
+
+  app.get('/api/queryByKey/:key', async (req, res) => {
+    const key = req.params.key;
+    let networkObject = await blockchainClient.connectToNetwork();
+    let input = {};
+    input.contract = networkObject.contract;
+    input.id = key;
+    let response = await blockchainClient.queryByKey(input);
+    res.send(response); 
+  })
+
   //******* this function is done  ***************************/
   app.post('/api/addParticipant', async (req, res) => {
     // json from front end 
@@ -87,7 +99,30 @@ app.post('/api/search', async (req, res) => {
   res.send(response.toString())
 })
 
+//GetHistoryForBatchId
+
+app.get('/api/trace/:key', async (req, res) => {
+  const key = req.params.key;
+  console.log(key);
+  let networkObject = await blockchainClient.connectToNetwork();
+  let response = await blockchainClient.getHistoryByBatchId(networkObject.contract, key);
+  // response = response.toString();
+  // console.log("server");
+  // console.log(response);
+  res.send(response);
+})
+
 ///////////////////////////////////////////////////
+
+//Ownsership Transfer
+
+app.post('/api/ownershipTransfer', async (req, res) => {
+  let input = req.body;
+  let networkObject = await blockchainClient.connectToNetwork();
+  input.contract = networkObject.contract;
+  let response = await blockchainClient.ownershipTransfer(input);
+  res.send(response);
+})
 
 
   // this is for checking connection to invoke init transaction//

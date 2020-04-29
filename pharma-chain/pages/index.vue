@@ -10,12 +10,23 @@
       </h2>
       <div class="links">
         <a
-          href="/addParticipant"
+          href="/trace"
           target="_blank"
           class="button--green"
         >
-          Add Participant
+          Trace Using BatchId 
         </a>
+        <a
+          href="/ownershipTransfer"
+          target="_blank"
+          class="button--green"
+        >
+          Ownership Transfer
+        </a>
+        
+        <br>
+        <br>
+        
         <a
           href="/api/query"
           target="_blank"
@@ -25,16 +36,39 @@
         </a>
 
         <a
-          href="/search"
+          href="/searchParticipants"
           target="_blank"
           class="button--grey"
         >
-          Search Records
+          Search Participants
+        </a>
+
+        <a
+          href="/searchMedicines"
+          target="_blank"
+          class="button--grey"
+        >
+          Search Medicines
+        </a>
+
+        <a
+          href="/queryByKey"
+          target="_blank"
+          class="button--grey"
+        >
+          Retrieve by key
         </a>
 
        <br>
 
         <br>
+        <a
+          href="/addParticipant"
+          target="_blank"
+          class="button--green"
+        >
+          Add Participant
+        </a>
          <a
           href="/addmedicine"
           target="_blank"

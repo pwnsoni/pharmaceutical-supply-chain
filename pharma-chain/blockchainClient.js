@@ -105,6 +105,30 @@ BlockchainClient = {
 
     },
 
+    async getHistoryByBatchId(contract, keyPassed) {
+
+      let response = await contract.submitTransaction('retrieveHistoryForBatchId', keyPassed);
+      response = JSON.parse(response.toString())
+      console.log(response);
+      // console.log(",msa.sasa")
+      // console.log(response.toString());
+      // console.log('llll');
+      // console.log(JSON.parse(response.toString()))
+      return response;
+    },
+
+    async ownershipTransfer(input){
+      
+      try{
+        let response = await input.contract.submitTransaction('ownershipTransfer', input.batchId, input.upcomingOwner);
+      }catch (error) {
+        console.log(`Error processing transaction. ${error}`);
+        console.log(error.stack);
+        return 'Failed'
+      }
+      return 'Ownership Transferred Successfully' 
+    },
+
     async queryWithQueryString(contract, queryString){
       
       console.log("initiating queryWithQueryString transaction");

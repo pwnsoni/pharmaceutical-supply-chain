@@ -2,7 +2,7 @@
   <div style="padding : 20px">
     <div> 
       <h2 class="subtitle">
-        Search records based on below keys
+        Search participants based on below keys
       </h2>
 
     <b-form @submit="onSubmit" @reset="onReset" v-if="show" >
@@ -59,16 +59,16 @@
         </b-form-checkbox-group>
       </b-form-group> -->
 
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" variant="primary" v-if="!spin">Submit</b-button>
+      <b-button type="reset" variant="danger" v-if="!spin">Reset</b-button>
     </b-form>
-<!-- 
+
     <div v-if="spin">
   <b-spinner label="Loading..."></b-spinner>
-</div> -->
+</div>
 
     </div>
-    <b-card class="mt-3" header="Search Result" v-if="spin" >
+    <b-card class="mt-3" header="Search Result"  >
       <pre class="m-0">{{ x }}</pre>
     </b-card>
 <div>
@@ -113,6 +113,7 @@
             // browser and the component can be used later for other purposes as well.
 
           this.x = await this.$axios.$post('/api/search', this.form)
+          this.spin = false
           
         //   this.$router.push('/')
         }  
@@ -124,10 +125,11 @@
           this.form.participantType = null,
           this.form.organization = '',
           this.form.licenseNo = '',
-          this.form.address = ''
+          this.form.address = '',
+          this.x = {}
           // this.form.checked = []
         // Trick to reset/clear native browser form validation state
-          this.show = false
+          
         //   this.$nextTick(() => {
         //   this.show = true
         // })
