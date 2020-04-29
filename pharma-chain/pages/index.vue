@@ -6,7 +6,7 @@
         Pharma-Chain
       </h1>
       <h2 class="subtitle">
-        Web-App to interact with supply chain for pharmaceuticals using blockchain (under devlopment)
+        Web-App to interact with supply chain for pharmaceuticals using blockchain (under development)
       </h2>
       <div class="links">
         <a
