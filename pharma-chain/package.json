@@ -18,7 +18,8 @@
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "fabric-network": "^1.4.8",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vue-navigation-bar": "^2.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
