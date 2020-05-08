@@ -2,7 +2,7 @@
   <div style="padding : 20px">
     <div> 
       <h2 class="subtitle">
-        Enter below data to execute ownershipTransfer transaction
+        Enter below data to execute ownershipTransfer transaction (Sell the batch)
       </h2>
 
     <b-form @submit="onSubmit" @reset="onReset">

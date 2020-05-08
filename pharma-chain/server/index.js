@@ -72,7 +72,24 @@ app.use(bodyParser.json())
   })
 //************************************************ */
 
+//addMedicine************************
 
+
+app.post('/api/addMedicine', async (req, res) => {
+  // json from front end 
+  const participant = req.body;
+  let networkObject = await blockchainClient.connectToNetwork();
+
+  console.log(participant)
+
+  participant.function = 'addMedicine';
+  participant.contract = networkObject.contract;
+
+  response = await blockchainClient.addMedicine(participant);
+  res.send(response.toString());
+})
+
+//************************* */
 
 //query with query string
 

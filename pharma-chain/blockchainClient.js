@@ -67,6 +67,22 @@ BlockchainClient = {
       console.log("initiating addParticipant transaction");
       let response = await args.contract.submitTransaction(args.function, args.participantType, 
         args.licenseNo, args.organisationName, args.address);
+        console.log('added participant');
+        console.log(response.toString());
+      return response;
+
+
+    },
+
+    async addMedicine(args) {
+      //call addMember smart contract function
+      //$TODO: dynamically call submitTransaction
+      console.log("initiating addMedicine transaction");
+      let response = await args.contract.submitTransaction(args.function, args.batchId, args.medicineName, 
+        args.medicineFormula, args.organization, args.manLicenseNo, args.mfgPlace, 
+        args.mfgDate, args.expDate, args.owner, args.currentLocation);
+      console.log('added medicine');
+      console.log(response.toString());
       return response;
 
 
@@ -83,6 +99,7 @@ BlockchainClient = {
 
       console.log("initiating queryAll transaction");
       let response = await contract.evaluateTransaction('queryAll');
+      console.log(response.toString());
       return response;
     },
 
@@ -107,13 +124,12 @@ BlockchainClient = {
 
     async getHistoryByBatchId(contract, keyPassed) {
 
+      console.log('getHistoryForBatchId transaction initiated');
       let response = await contract.submitTransaction('retrieveHistoryForBatchId', keyPassed);
       response = JSON.parse(response.toString())
-      console.log(response);
-      // console.log(",msa.sasa")
-      // console.log(response.toString());
-      // console.log('llll');
-      // console.log(JSON.parse(response.toString()))
+      // console.log(response);  
+      console.log('response')
+      console.log(response)
       return response;
     },
 
@@ -121,6 +137,7 @@ BlockchainClient = {
       
       try{
         let response = await input.contract.submitTransaction('ownershipTransfer', input.batchId, input.upcomingOwner);
+        console.log('Ownership transferred successfully');
       }catch (error) {
         console.log(`Error processing transaction. ${error}`);
         console.log(error.stack);
@@ -133,6 +150,7 @@ BlockchainClient = {
       
       console.log("initiating queryWithQueryString transaction");
       let response = await contract.submitTransaction('queryWithQueryString', JSON.stringify(queryString));
+      console.log(response.toString());
       return response;
     }
 }

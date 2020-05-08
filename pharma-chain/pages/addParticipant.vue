@@ -81,7 +81,7 @@
           address: ''
           // checked: []
         },
-        participantType: [{ text: 'Select One', value: null }, 'Manufacturer', 'Distributor', 'Wholeseller', 'Retailer'],
+        participantType: [{ text: 'Select One', value: null }, 'Manufacturer', 'Distributor', 'Wholesaler', 'Retailer'],
         show: true,
         spin: false
       }
