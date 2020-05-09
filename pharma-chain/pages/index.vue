@@ -2,6 +2,7 @@
   <div class="container">
     <div>
       <!-- <navbar /> -->
+      
       <nuxt/>
       <h1 class="title">
         Pharma-Chain
@@ -85,9 +86,13 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import navbar from '~/components/navbar.vue'
+import footer1 from '~/components/footer1.vue'
+
+
+
 export default {
   components: {
-    navbar
+    navbar,footer1
   }
 }
 </script>
